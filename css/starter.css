@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url("/images/concrete_seamless.png");
+    background-image: url("../images/concrete_seamless.png");
     font-size: 16pt; /* test for this! Make all sizes em or rem */
     font-family: 'Alegreya Sans SC', sans-serif;
 }
