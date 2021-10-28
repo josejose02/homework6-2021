@@ -1,31 +1,70 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url("/images/concrete_seamless.png");
     font-size: 16pt; /* test for this! Make all sizes em or rem */
-  }
-  
-  header{
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 0;
     background: #fff;
     border-bottom: 3px solid #50C7C7;
-  }
-  
-  h1{
+}
+
+header > img{
+    max-width: 450px;
+    animation: grow_logo 5s;
+}
+
+@keyframes grow_logo {
+    from {
+        width: 50px;
+        opacity: 0;
+    }
+    to {
+        width: 425px;
+        opacity: 100%;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links{
+        justify-content: center;
+    }
+}
+
+h1{
     font-size: 2em;
     text-align: center;
     line-height: 2;
-  }
-  
-  h2{
+}
+
+h2{
     font-size: 1.5em;
     text-align: center;
     padding: 5px;
-  }
-  
-  p {
+}
+
+p {
     padding: 0 30px;
-  }
-  
-  a.skip{
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+a.skip{
     background: white;
     left: 0;
     padding: 6px;
@@ -34,52 +73,68 @@ body{
     -webkit-transition: top 1s ease-out;
     transition: top 1s ease-out;
     z-index: 1;
-  }
-  
-  a.skip:focus{
+}
+
+a.skip:focus{
     top:20px;
     color: black;
     text-decoration-style: solid;
-  }
-  
-  *:focus{
+}
+
+a:visited{
+    color: blue;
+}
+
+*:focus{
     border: 2px solid black;
-  }
+}
 
 
-  .nav_item a{
+.nav_item a{
     padding: 10px;
-  }
-  
-  .nav_item a:hover, a:focus{
+}
+
+.nav_item a:hover, a:focus{
     color: #50C7C7;
     text-decoration: underline;
     -webkit-text-decoration-style: dotted;
-            text-decoration-style: dotted;
-  }
+    text-decoration-style: dotted;
+}
 
-  .pricing{
+.pricing{
     min-height: 475px;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-  .card {
+.card {
+    flex: initial;
+    width: 450px;
     margin: 12px;
     background: #fff;
     border-radius: 7px;
     padding: 0 0 25px 0;
-  
-  }
 
-  .card > ul{
+}
+
+.card > header {
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0;
+    border-radius: 7px 7px 0 0;
+}
+
+.card > ul{
     list-style: none;
     padding-left: 5px;
-  }
-  
-  .card > ul li {
+}
+
+.card > ul li {
     width: 90%;
     margin: 20px auto;
-    
-  }
+
+}
 
 .card button{
     width: 90%;
@@ -90,35 +145,45 @@ body{
     background: #288080;
     color: white;
     font-size: 1em;
-  }
-  
-  .card h3{
+}
+
+.card h3{
     font-size: 4em;
     color: white;
     text-align: center;
-  }
-  
-  .card_big{
-    -webkit-transform: initial;
-            transform: initial;
-  }
+}
 
-  .gallery{
+.card_big{
+    -webkit-transform: initial;
+    transform: initial;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
     min-height: 600px;
-  }
-  
-  footer{
+}
+
+.gallery > img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+footer{
     background-color: black;
     color: white;
     padding: 30px;
     text-align: center;
-  }
+}
 
-  @media screen and (min-width: 850px){
+@media screen and (min-width: 850px){
     .card_big{
         -webkit-transform: scaleY(1.1);
         transform: scaleY(1.1);
         z-index: -99;
-  }
+    }
 }
-  
