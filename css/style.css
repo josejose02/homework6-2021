@@ -33,6 +33,12 @@ header > img{
     }
 }
 
+@media (prefers-reduced-motion) {
+    header > img {
+        animation-name: none;
+    }
+}
+
 @media screen and (min-width: 850px) {
     body > header{
         flex-direction: row;
