@@ -2,14 +2,16 @@ body{
     margin: 0;
     padding: 0;
     background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
     font-size: 16pt; /* test for this! Make all sizes em or rem */
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Alegreya Sans SC', serif;
 }
 
-header{
+body > header{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-grow: 0;
     background: #fff;
     border-bottom: 3px solid #50C7C7;
@@ -32,9 +34,11 @@ header > img{
 }
 
 @media screen and (min-width: 850px) {
-    header{
+    body > header{
         flex-direction: row;
         justify-content: space-between;
+        position: sticky;
+        top: 0;
     }
 
     .nav_links{
@@ -104,13 +108,14 @@ a:visited{
 .pricing{
     min-height: 475px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .card {
     flex: initial;
-    width: 450px;
+    flex-basis: 450px;
     margin: 12px;
     background: #fff;
     border-radius: 7px;
