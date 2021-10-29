@@ -68,10 +68,11 @@ p {
     padding: 0 30px;
 }
 
+
 .nav_links {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 a.skip{
@@ -196,5 +197,46 @@ footer{
         -webkit-transform: scaleY(1.1);
         transform: scaleY(1.1);
         z-index: -99;
+    }
+}
+
+@media print{
+    body{
+        background-image: none;
+    }
+
+    .nav_links{
+        justify-content: space-between;
+    }
+
+    .pricing{
+        align-items: flex-end;
+    }
+
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 250px;
+    }
+
+    #gallery{
+        visibility: hidden;
+    }
+
+    .gallery{
+        visibility: hidden;
+    }
+
+    div.card > ul li:nth-child(2):after{
+        content: "👍";
+    }
+
+    div.card > ul li:last-child:before, div.card > ul li:first-child:before{
+        content: "👍";
+    }
+
+    footer{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
     }
 }
